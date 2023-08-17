@@ -1,16 +1,31 @@
 version: "3.3"
 
 services:
-    wechat-box:
-        image: "sureer/wechat-box:3.9.2.23"
-        restart: unless-stopped
-        container_name: "wechat-box"
-        environment:
-            WC_AUTO_RESTART: "yes"
-        ports:
-            - "8080:8080"
-        volumes:
-              - "/home/bread/.wechat/WeChat Files/:/home/app/WeChat Files/"
-              - "/home/bread/.wechat/Applcation Data/:/home/app/.wine/drive_c/users/user/Application Data/"
-              - "/home/bread/external:/home/app/external"
-        tty: true
+  wechat-funtool-box:
+    image: "sureer/wechat-funtool-box:latest"
+    restart: unless-stopped
+    container_name: "wechat-funtool-box"
+    environment:
+      WC_AUTO_RESTART: "yes"
+      FT_AUTO_RESTART: "yes"
+    ports:
+      - "8080:8080"
+      - "5555:5555"
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 3096M
+        reservations:
+          cpus: "1"
+          memory: 1024M
+    volumes:
+      - wechatDir:/home/app/WeChat Files/
+      - appData:/home/app/.wine/drive_c/users/user/Application Data/
+      # funtool_wx tool 位置 非funtool_wx 升级, 尽量不要放开该参数
+      # - ./funtool/funtool_wx.exe:/funtool_wx.exe
+    tty: true
+
+volumes:
+  wechatDir: 
+  appData: 

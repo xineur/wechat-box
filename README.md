@@ -5,11 +5,14 @@
   - 特殊假设: wechat-monitor(修复黑边，关闭错误弹窗)只支持中文环境
   - 版本依赖: 不同微信版本，安装需要的payload不同, 尽量使用release的代码进行构建
   - 意外情况: 由于使用了不稳定的自动化方式(xdotool), 构建有几率(静默)失败，遇到这种情况可以考虑增大sleep时间
+  - funtool_wx.exe 下载地址: [https://github.com/cixingguangming55555/wechat-bot/blob/master/funtool/funtool_wx=3.9.2.23.exe](https://github.com/cixingguangming55555/wechat-bot/blob/master/funtool/funtool_wx%3D3.9.2.23.exe)
 
 # Usage
 - docker-compose up
 - open 'http://your-ip:8080/vnc.html'
+- 
 
 # Build
 1. Download WeChatSetup-\*.exe to ./root/WeChatSetup-\*.exe
-2. docker build -t xxxx/wechat-box .
+2. Download funtool_wx*.exe to ./root/funtool_wx.exe
+3. docker build -t xxxx/wechat-box .
