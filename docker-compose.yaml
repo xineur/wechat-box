@@ -20,23 +20,8 @@ services:
           cpus: "1"
           memory: 1024M
     volumes:
-      - wechat_dir:/home/app/WeChat Files/
-      - app_data_dir:/home/app/.wine/drive_c/users/user/Application Data/
+      - ./wechat_dir:/home/app/WeChat Files/
+      - ./app_data_dir:/home/app/.wine/drive_c/users/user/Application Data/
       # funtool_wx tool 位置 非funtool_wx 升级, 尽量不要放开该参数
       # - ./funtool/funtool_wx.exe:/funtool_wx.exe
     tty: true
-
-volumes:
-  wechat_dir:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: ./wechat_dir
-  app_data_dir: 
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: ./app_data
-
