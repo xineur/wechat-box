@@ -7,8 +7,10 @@
   - 意外情况: 由于使用了不稳定的自动化方式(xdotool), 构建有几率(静默)失败，遇到这种情况可以考虑增大sleep时间
 
 # Usage
-- docker-compose up
-- open 'http://your-ip:8080/vnc.html'
+1. 新建 `docker-compose.yaml`
+2. 将 [docker-compose.yaml](https://github.com/xineur/wechat-box/blob/master/docker-compose.yaml) 中的内容拷贝到 `docker-compose.yaml`
+3. 在 `docker-compose.yaml` 同级目录执行 `docker-compose up`
+4. 在浏览器打开 `'http://your-ip:8080/vnc.html'`
 
 # Build
 1. Download WeChatSetup-\*.exe to ./root/WeChatSetup-\*.exe
