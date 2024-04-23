@@ -10,7 +10,7 @@ services:
         ports:
             - "8080:8080"
         volumes:
-              - "/home/bread/.wechat/WeChat Files/:/home/app/WeChat Files/"
-              - "/home/bread/.wechat/Applcation Data/:/home/app/.wine/drive_c/users/user/Application Data/"
-              - "/home/bread/external:/home/app/external"
+              - "./.wechat/WeChat Files/:/home/app/WeChat Files/"
+              - "./.wechat/Applcation Data/:/home/app/.wine/drive_c/users/user/Application Data/"
+              - "./external:/home/app/external"
         tty: true
